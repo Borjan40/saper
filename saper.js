@@ -20,14 +20,20 @@ function createArea(amountX, amountY) {
     document.querySelector('.cell').outerHTML = '';
 
     let maxValcell = (amountX * amountY) - 1;
-    console.log(maxValcell)
-    let bombAdress = Math.round(Math.random() * (0 - maxValcell) + maxValcell);
+    // console.log(maxValcell)
 
     let fieldContainer = document.querySelectorAll('.cell');
-    console.log(fieldContainer)
-    for (let i = 0; i < fieldContainer.length; i++) {
-        fieldContainer[bombAdress].style.background = 'orange'
+    // console.log(fieldContainer)
+    for (let k = 0; k < 3; k++) {
+        // console.log('*')
+        let bombAdress = (Math.round(Math.random() * (0 - maxValcell) + maxValcell)) + 1;
+        console.log(bombAdress)
+        for (let i = 0; i < fieldContainer.length; i++) {
+            fieldContainer[bombAdress].style.background = 'orange'
+        }
+        
     }
+
 }
 createArea(3, 4);
 
